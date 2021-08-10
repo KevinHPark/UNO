@@ -19,6 +19,7 @@ body {
     6px 6px 0 rgb(0, 0, 0), 7px 7px 0 rgb(0, 0, 0), 8px 8px 0 rgb(0, 0, 0), 9px 9px 0 rgb(0, 0, 0);
     color: #eeff00;
     text-align: center;
+    animation: 3s ease-in 1s infinite reverse both running slidein;
 }
 
 .Table {
@@ -37,4 +38,25 @@ body {
 	color: rgb(229, 255, 0);
     text-align: center; 
     text-shadow: 1px 1px 0 #CCCCCC, 2px 2px 0 #000000, 3px 3px 0 rgb(0, 0, 0), 4px 4px 0 #000000;
+    /*So this is the animation part of it. Duration is needed at akk tunes and eas-in-out is for transition effects. I already know this from animation previousely xd*/
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+/* From what I gathered. Keyframe is animation then after that is a name. So works like a function im guessing??? transform is to moving and the percentage is just..well percentage*/
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		transform:         translateY(0)
+	}
+	40% {	
+		transform:         translateY(-30px)
+	}
+	60% {
+		transform:         translateY(-15px)
+	}
+}
+/*So hover is a property i found. its pretty cool. */
+.Play:hover {
+  cursor: pointer;
+  animation-name: bounce;
 }
