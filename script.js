@@ -2,18 +2,20 @@ let possibleColors = ["Green ","Blue ","Yellow ","Red "]
 let possibleNumbers = [1,2,3,4,5,6,7,8,9]
 let hand = []
 
-let card = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card1 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card2 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card3 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card4 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card5 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card6 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+let card7 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
 
-for (let system = 0; system = 7; system++){
-    let cards = card[system]
-}
-
-hand.push(card,card,card,card,card,card,card)
+hand.push(card1,card2,card3,card4,card5,card6,card7)
 
 console.log(hand)
-//  let hand = [card, card2]
-//  let currentHand = window.prompt("Your cards are " + hand)
-// console.log(currentHand)
+
+//let currentHand = window.prompt("Your cards are " + hand)
+console.log(currentHand)
 
 // if (currentHand === "Green 2"){
 //     hand = card2

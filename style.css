@@ -1,12 +1,10 @@
 body {
     background: -moz-linear-gradient(left, #eeff00 0%, #ff0000 50%, #eeff00 100%);
-	min-height: 30rem;
-	position: relative;
 	overflow: hidden;
-	display: flex;
 	justify-content: center;
 	align-content: center;
   }
+
 .UNO {
     font-family:fantasy;
     transform: rotate(4deg);
@@ -15,7 +13,28 @@ body {
 	color: rgb(229, 255, 0);
 /* Puts the UNO words closer together */
 	letter-spacing: -1.5rem;
-/* So I wanted the words be like. stretched down. I couldnt figure out a syntax for it. So i just copied the same shadows down with different locations. 0px 0px 0px. first 0px goes right or left. Second px goes down and up. Third px is the blur settings. Trial and error */
-	text-shadow: 1px 1px 0 #CCCCCC, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb, 4px 4px 0 #000000, 5px 5px 0 rgb(0, 0, 0), 6px 6px 0 rgb(0, 0, 0), 7px 7px 0 rgb(0, 0, 0), 8px 8px 0 rgb(0, 0, 0), 9px 9px 0 rgb(0, 0, 0);
+/* So I wanted the words be like. stretched down. I couldnt figure out a syntax for it. So i just copied the same shadows down with different locations.
+ 0px 0px 0px. first 0px goes right or left. Second px goes down and up. Third px is the blur settings. Trial and error */
+	text-shadow: 1px 1px 0 #CCCCCC, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb, 4px 4px 0 #000000, 5px 5px 0 rgb(0, 0, 0), 
+    6px 6px 0 rgb(0, 0, 0), 7px 7px 0 rgb(0, 0, 0), 8px 8px 0 rgb(0, 0, 0), 9px 9px 0 rgb(0, 0, 0);
     color: #eeff00;
+    text-align: center;
+}
+
+.Table {
+    font-family:fantasy;
+    font-weight: bold;
+	font-size: 2rem;
+	color: rgb(229, 255, 0);
+    text-align: center; 
+    text-shadow: 1px 1px 0 #000000, 2px 2px 0 #000000, 3px 3px 0 rgb(0, 0, 0), 4px 4px 0 #000000;
+}
+
+.Play {
+    font-family:fantasy;
+    font-weight: bold;
+	font-size: 2rem;
+	color: rgb(229, 255, 0);
+    text-align: center; 
+    text-shadow: 1px 1px 0 #CCCCCC, 2px 2px 0 #000000, 3px 3px 0 rgb(0, 0, 0), 4px 4px 0 #000000;
 }
