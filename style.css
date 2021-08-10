@@ -3,6 +3,7 @@ body {
 	overflow: hidden;
 	justify-content: center;
 	align-content: center;
+    animation: unoVerse ease 30s infinite;
   }
 
 .UNO {
@@ -12,14 +13,15 @@ body {
 	font-size: 6rem;
 	color: rgb(229, 255, 0);
 /* Puts the UNO words closer together */
-	letter-spacing: -1.5rem;
+	letter-spacing: -1.28rem;
 /* So I wanted the words be like. stretched down. I couldnt figure out a syntax for it. So i just copied the same shadows down with different locations.
  0px 0px 0px. first 0px goes right or left. Second px goes down and up. Third px is the blur settings. Trial and error */
 	text-shadow: 1px 1px 0 #CCCCCC, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb, 4px 4px 0 #000000, 5px 5px 0 rgb(0, 0, 0), 
     6px 6px 0 rgb(0, 0, 0), 7px 7px 0 rgb(0, 0, 0), 8px 8px 0 rgb(0, 0, 0), 9px 9px 0 rgb(0, 0, 0);
     color: #eeff00;
     text-align: center;
-    animation: 3s ease-in 1s infinite reverse both running slidein;
+    animation: shake 10s infinite;
+    animation-iteration-count: infinite;
 }
 
 .Table {
@@ -55,8 +57,23 @@ body {
 		transform:         translateY(-15px)
 	}
 }
-/*So hover is a property i found. its pretty cool. */
+/*So hover is a property I found. its pretty cool. */
 .Play:hover {
   cursor: pointer;
   animation-name: bounce;
+}
+
+/*Shakes uno and makes go uppy and downy*/
+@keyframes shake {
+    from {transform: rotate(6deg) translateY(0px);}
+    75% {transform: rotate(0deg) translateY(-30px);}
+    to {transform: rotate(6deg) translateY(0px);}
+  }
+
+  /*Changes from outside*/
+@keyframes unoVerse {
+    25% {background: -moz-linear-gradient(left, #eeff00 0%, #ff0000 50%, #eeff00 100%);}
+    50% {background: -moz-linear-gradient(left, #006eff 0%, #ff0000 50%, #006eff 100%);}
+    75% {background: -moz-linear-gradient(left, #1eff00 0%, #ff0000 50%, #1eff00 100%);}
+   100% {background: -moz-linear-gradient(left, #ff0000 0%, #ff0000 50%, #ff0000 100%);}
 }

@@ -1,81 +1,59 @@
 //Randomly generates all possible uno cards with arrays
-let possibleColors = ["Green ","Blue ","Yellow ","Red "]
-let possibleNumbers = [1,2,3,4,5,6,7,8,9]
-//The display for the text on the website to show what card you played and whats currently playing
-let currentPlay = []
+let possibleColors = ["Green ", "Blue ", "Yellow ", "Red "]
+let possibleNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 //The hand you play with. An empty array that gets 7 card added too
 let hand = []
 
 //Randomly Generates all 7 cards
-let card1 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card2 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card3 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card4 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card5 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card6 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let card7 = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
+for (let i = 0; i < 8; i++) {
+    let card = possibleColors[Math.floor(Math.random() * possibleColors.length)] + possibleNumbers[Math.floor(Math.random() * possibleNumbers.length)]
 
-//By pushing this hand. all 7 cards that got assigned random numbers gets put into the empty hand (array)
-hand.push(card1,card2,card3,card4,card5,card6,card7)
+    hand.push(card)
+}
 
+//Shows what you have
 console.log(hand)
 
-let currentHand = window.prompt("Your cards are " + hand)
-console.log(currentHand)
-currentPlay = currentHand
+let currentPlay = possibleColors[Math.floor(Math.random() * possibleColors.length)] + possibleNumbers[Math.floor(Math.random() * possibleNumbers.length)]
+//Here
+function PlaceCard(currentHand) {
+    //i is number in array. SO the loop SHOULD end when there are no more cards
+    for (let i in hand) {
+      let cardName = hand[i]
+      let cardNumberInTable = i
 
+      //currentHand is user input. So if userinput the correct card they have that matches the card in their deck
+      if (currentHand.toLowerCase() === cardName.toLowerCase()) {
+        // SO /(\d+)/ is apparently to find numbers. numbersInText gets the number of the uno card. So if I type "green 7". It takes the 7
+        let numbersInText = currentHand.match(/(\d+)/)
+        let numbersInCurrentCardOnTable = currentPlay.match(/(\d+)/)
 
-//cannot use if over and over with vague conditions like currentHand === card2. It will then count the losing trigger??? 
-//So adding else if after the initial if statement will make the condition less vague?
+        
+        let currentHandCOLOR = currentHand.replace(/\d+/g, '');
+        let currentPlayCOLOR = currentPlay.replace(/\d+/g, '');
 
-if (currentHand === card1){
-    hand.splice(0,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-    if (currentPlay = system){
-       let currentHand = window.prompt("The current played card is " + currentPlay + "." + " Your cards are " + hand) 
-       if (currentHand === card2) {
-        if (card2 === possibleColors[1]){
-            hand.splice(0,1)
-            console.log(hand)
-        } else if (card2 !== possibleColors[1]){
-            alert("You lose. Typing in an invalid card results to loss!")
-            currentPlay = "You Lose!"
+        //DEBUGGING CUZ IT WONT WORKKKK
+        console.log("Color matches state : Hand = " + currentHandCOLOR + " Table = " + currentPlayCOLOR)
+        console.log("Both color matches = " + (currentHand.toLowerCase() === currentPlay.toLowerCase()))
+        console.log("Number match state : Hand = " + numbersInText + " Table = " + numbersInCurrentCardOnTable)
+        console.log("Both Numbers match = " + (numbersInText === numbersInCurrentCardOnTable))
+
+        //toString is to get the color. The one above takes the number, the one below takes the color
+        //So how this loop SHOULD WORK is the first part matches the card on the table color and the card you're trying to place
+        //AND it also checks the number of the card on the table and the number of the card you're trying to place
+        // .toLowerCase() just makes it so you dont have to be cap sensitive when typing the card. like "yellow 6" works and fills in for "Yellow 6"
+        if (currentHandCOLOR.toLowerCase() === currentPlayCOLOR.toLowerCase() || numbersInText === numbersInCurrentCardOnTable) {
+          console.log("Placed card " + currentHand)
+          hand.splice(cardNumberInTable, 1)
+          console.log("Cards in your hand : " + hand)
         }
-       }
+      }
     }
-} else if (currentHand === card2){
-    hand.splice(1,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand === card3){
-    hand.splice(2,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand === card4){
-    hand.splice(3,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand === card5){
-    hand.splice(4,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand === card6){
-    hand.splice(5,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand === card7){
-    hand.splice(6,1)
-    console.log(hand)
-    let system = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-    currentPlay = system
-} else if (currentHand !== hand){
-    alert("You lose. Typing in an invalid card results to loss!")
-    currentPlay = "You Lose!"
-}
+    currentHand = window.prompt("Your cards are " + hand)
+    PlaceCard(currentHand);
+    return false
+  }
+
+  currentHand = window.prompt("Your cards are " + hand)
+  PlaceCard(currentHand);
