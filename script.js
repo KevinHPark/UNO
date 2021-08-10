@@ -1,14 +1,16 @@
 let possibleColors = ["Green ","Blue ","Yellow ","Red "]
 let possibleNumbers = [1,2,3,4,5,6,7,8,9]
+let hand = []
 
 let card = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
-let hand = []
-for (var currentCard = 0; currentCard === 7; currentCard++){
-    hand.push(card[0])
-    currentCard++
+
+for (let system = 0; system = 7; system++){
+    let card =  card + "1"
 }
 
- console.log(hand)
+hand.push(card,card,card,card,card,card,card)
+
+console.log(hand)
 //  let hand = [card, card2]
 //  let currentHand = window.prompt("Your cards are " + hand)
 // console.log(currentHand)
