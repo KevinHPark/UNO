@@ -2,6 +2,7 @@
 <head>
     <title>Singleplayer Uno</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
     <body>
         <div class="UNO">
@@ -10,9 +11,16 @@
         <div class="Table">
             <h2>Current Card At Play</h2>
         </div>
-        <div class="Play">
-            Green <span data-bind="currentPlay">_</span>
+        <div class="item">
+            <div class="Play">
+                <div class="content">
+                    <span data-bind="currentPlay">-</span>
+                </div>
+            </div>
         </div>
         <script src="./script.js"></script>
+        <!-- IT TOOK ME 40 MINUTES TO REALISE WHY CURRENT.JS WASNT WORKING. FOR FOURTY MINUTES. 
+            FOURTYYYY I DIDINT LINK THE FILE. SO I WAS GOING BACK AND FORTH ON THE CODE SEEING WHY IT WOULDNT WORK.....U DIDNT LINK THE FILEEEEE -->
+        <script src="./lib/current.js"></script>
     </body>
 </html>
