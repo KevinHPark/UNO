@@ -5,7 +5,7 @@ let hand = []
 let card = possibleColors[Math.floor(Math.random()*possibleColors.length)] + possibleNumbers[Math.floor(Math.random()*possibleNumbers.length)]
 
 for (let system = 0; system = 7; system++){
-    let card =  card + "1"
+    let cards = card[system]
 }
 
 hand.push(card,card,card,card,card,card,card)
